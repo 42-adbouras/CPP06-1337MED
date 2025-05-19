@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/16 10:36:54 by adbouras          #+#    #+#              #
-#    Updated: 2025/05/16 10:37:29 by adbouras         ###   ########.fr        #
+#    Updated: 2025/05/18 11:14:22 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CLN		=	\033[K\r\c
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -Wshadow #-std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -Wshadow -std=c++98
 
 NAME	=	identify
 
@@ -51,7 +51,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf *_shrubbery
 	@echo "$(RED)[$(NAME) cleaned]$(RST)"
 
 re: fclean all

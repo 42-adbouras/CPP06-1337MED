@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/27 16:22:01 by adbouras          #+#    #+#              #
-#    Updated: 2025/04/27 16:22:51 by adbouras         ###   ########.fr        #
+#    Updated: 2025/05/18 11:14:09 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,6 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf *_shrubbery
 	@echo "$(RED)[$(NAME) cleaned]$(RST)"
 
 re: fclean all

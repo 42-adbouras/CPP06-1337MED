@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 09:32:10 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/16 10:22:57 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/05/18 09:17:58 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,4 @@
 
 #include "Base.hpp"
 
-class	C : public Base
-{
-
-};
+class	C : public Base {};
