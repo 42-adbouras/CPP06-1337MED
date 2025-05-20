@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 09:32:26 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/18 10:06:22 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:43:09 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 #include "B.hpp"
 #include "C.hpp"
 
-class F {};
-int main() {
+int main()
+{
 	Base	*base = generate();
+
 	identify(base);
 	identify(*base);
 }

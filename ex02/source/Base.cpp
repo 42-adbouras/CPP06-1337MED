@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/16 09:32:20 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/18 10:07:00 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:42:18 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 #include "B.hpp"
 #include "C.hpp"
 
-Base::~Base( void ) {
-	std::cout << "[Base class destructed]" << std::endl;
-}
+Base::~Base( void ) { return ; }
 
 Base*	generate(void) {
 	srand(static_cast<unsigned int>(time(NULL)));
@@ -43,19 +41,19 @@ void	identify(Base* p) {
 
 void	identify(Base& p) {
 	try {
-		dynamic_cast<A&>(p);
+		(void)dynamic_cast<A&>(p);
 		std::cout << "Identified a refreced class A." << std::endl;
-	} catch (std::bad_cast&) {
-		try {
-			dynamic_cast<B&>(p);
-			std::cout << "Identified a refreced class B." << std::endl;
-		} catch (std::bad_cast&) {
-			try {
-			dynamic_cast<C&>(p);
-			std::cout << "Identified a refreced class C." << std::endl;
-			} catch (std::bad_cast&) {
-				std::cout << "[Unknown refreced type]" << std::endl;
-			}
-		}
-	}
+		return ;
+	} catch (std::exception&) {}
+	try {
+		(void)dynamic_cast<B&>(p);
+		std::cout << "Identified a refreced class B." << std::endl;
+		return ;
+	} catch (std::exception&) {}
+	try {
+		(void)dynamic_cast<C&>(p);
+		std::cout << "Identified a refreced class C." << std::endl;
+		return ;
+	} catch (std::exception&) {}
+	std::cout << "[Unknown refreced type]" << std::endl;
 }
