@@ -6,13 +6,13 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 15:31:05 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/17 13:36:29 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/05/20 17:39:37 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Serializer.hpp"
 
-Serializer::Serializer( void ) { return; }
+Serializer::Serializer( void ) { return ; }
 
 Serializer::Serializer( const Serializer& right ) {
 	*this = right;
