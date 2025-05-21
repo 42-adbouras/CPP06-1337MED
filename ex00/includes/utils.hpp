@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   utils.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/16 09:32:06 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/20 17:41:26 by adbouras         ###   ########.fr       */
+/*   Created: 2025/05/21 09:37:48 by adbouras          #+#    #+#             */
+/*   Updated: 2025/05/21 09:42:42 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
+#include "ScalarConverter.hpp"
 
-class	Base
-{
-public:
-	virtual ~Base( void );
-};
-
-Base*	generate( void );
-void	identify( Base* p );
-void	identify( Base& p );
+bool	isDisplayable( char c );
+void	printImpossible( void );
+bool	charLiteral( str input );
+void	printChar( double _db );
+void	printInt( double _db );
+bool	pseudoLiteral( str input );
+void	printFloatDouble( double _db );
