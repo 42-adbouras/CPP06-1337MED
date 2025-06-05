@@ -6,12 +6,26 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/27 16:26:05 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/21 09:57:25 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:29:34 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 #include "utils.hpp"
+
+ScalarConverter::ScalarConverter( void ) { return ; }
+
+ScalarConverter::~ScalarConverter( void ) { return; }
+
+ScalarConverter::ScalarConverter( const ScalarConverter& right )
+{
+	static_cast<void>(right); return ;
+}
+
+ScalarConverter&	ScalarConverter::operator=( const ScalarConverter& right )
+{ 
+	static_cast<void>(right); return (*this);
+}
 
 void	ScalarConverter::convert( const str& param )
 {
@@ -30,17 +44,17 @@ void	ScalarConverter::convert( const str& param )
 			printImpossible(); return ;
 		}
 	}
-	double _db;
-	std::istringstream tempStream(input);
+	double				_db;
+	std::istringstream	strStream(input);
 
 	size_t	lastChar = input.length() - 1;
 	if (input[lastChar] == 'f')
 		input = input.substr(0, lastChar);
 
-	tempStream.str(input);
-	tempStream >> _db;
+	strStream.str(input);
+	strStream >> _db;
 
-	if (tempStream.fail() || !tempStream.eof()) {
+	if (strStream.fail() || !strStream.eof()) {
 		printImpossible(); return ;
 	}
 

@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/21 09:38:32 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/21 09:39:50 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/06/02 13:59:03 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ bool	isDisplayable( char c )
 
 void	printImpossible( void )
 {
-	std::cout << "char: impossible" << std::endl;
-	std::cout << "int: impossible" << std::endl;
-	std::cout << "float: impossible" << std::endl;
-	std::cout << "double: impossible" << std::endl;
+	std::cout << "char: Impossible" << std::endl;
+	std::cout << "int: Impossible" << std::endl;
+	std::cout << "float: Impossible" << std::endl;
+	std::cout << "double: Impossible" << std::endl;
 }
 
 bool	charLiteral( str input )
 {
-	if (input.length() == 1 && input[0] == '\'' && input[2] == '\'') {
+	if (input.length() == 3 && input[0] == '\'' && input[2] == '\'') {
 		char c = input[1];
 		std::cout << "char: '" << c << "'" << std::endl;
 		std::cout << "int: " << static_cast<int>(c) << std::endl;
@@ -43,10 +43,10 @@ bool	charLiteral( str input )
 void	printChar( double _db )
 {
 	if (_db < std::numeric_limits<char>::min() \
-		|| _db > std::numeric_limits<char>::max() \
+		|| _db > std::numeric_limits<char>::max()
 		|| std::isnan(_db))
 	{
-		std::cout << "char: impossible" << std::endl;
+		std::cout << "char: Impossible" << std::endl;
 	} else if (!isDisplayable(static_cast<char>(_db))) {
 		std::cout << "char: Non displayable" << std::endl;
 	} else {
@@ -57,10 +57,10 @@ void	printChar( double _db )
 void	printInt( double _db )
 {
 	if (_db < std::numeric_limits<int>::min() \
-		|| _db > std::numeric_limits<int>::max() \
+		|| _db > std::numeric_limits<int>::max()
 		|| std::isnan(_db))
 	{
-		std::cout << "int: impossible" << std::endl;
+		std::cout << "int: Impossible" << std::endl;
 	} else {
 		std::cout << "int: " << static_cast<int>(_db) << std::endl;
 	}
@@ -71,11 +71,12 @@ bool	pseudoLiteral( str input )
 	if (input == "nan" || input == "nanf" || input == "+inf" || input == "+inff"
 		|| input == "-inf" || input == "-inff")
 	{
-		bool isFloat = input[input.length() - 1] == 'f';
+		bool isFloat = input[input.length() - 2] == 'f';
 		str base = isFloat ? input.substr(0, input.length() - 1) : input;
+		base = (input == "nanf") ? "nan" : base;
 
-		std::cout << "char: impossible" << std::endl;
-		std::cout << "int: impossible" << std::endl;
+		std::cout << "char: Impossible" << std::endl;
+		std::cout << "int: Impossible" << std::endl;
 		std::cout << std::fixed << std::setprecision(1);
 		std::cout << "float: " << base << "f" << std::endl;
 		std::cout << "double: " << base << std::endl;
@@ -86,6 +87,11 @@ bool	pseudoLiteral( str input )
 
 void	printFloatDouble( double _db )
 {
+	if (std::isnan(_db)) {
+		std::cout << "float: Impossible" << std::endl;
+		std::cout << "double: Impossible" << std::endl;
+		return ;
+	}
 	std::cout << std::fixed << std::setprecision(1);
 	std::cout << "float: " << static_cast<float>(_db) << "f" << std::endl;
 	std::cout << "double: " << _db << std::endl;

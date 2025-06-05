@@ -6,7 +6,7 @@
 #    By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/15 12:26:24 by adbouras          #+#    #+#              #
-#    Updated: 2025/05/18 11:15:19 by adbouras         ###   ########.fr        #
+#    Updated: 2025/05/27 17:42:45 by adbouras         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CLN		=	\033[K\r\c
 
 CC		=	c++
 
-CFLAGS	=	-Wall -Wextra -Werror -Wshadow #-std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -Wshadow -std=c++98
 
 NAME	=	serialize
 

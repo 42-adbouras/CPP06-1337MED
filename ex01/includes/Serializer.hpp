@@ -6,7 +6,7 @@
 /*   By: adbouras <adbouras@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 12:29:05 by adbouras          #+#    #+#             */
-/*   Updated: 2025/05/20 17:38:13 by adbouras         ###   ########.fr       */
+/*   Updated: 2025/06/02 11:33:42 by adbouras         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@ private:
 	Serializer( void );
 	Serializer( const Serializer& right );
 	~Serializer( void );
+
 	Serializer&	operator=( const Serializer& right );
+
 public:
 	static uintptr_t	serialize( Data* ptr );
 	static Data*		deserialize( uintptr_t raw );
